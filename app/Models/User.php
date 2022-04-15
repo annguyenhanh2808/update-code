@@ -22,7 +22,17 @@ class User extends Authenticatable
         'email',
         'password',
         'type',
-        'active'
+        'active',
+        'file_dinh_kem',
+        'phone_number',
+        'address',
+        'gender',
+        'date_of_birth',
+        'about_us',
+        'education',
+        'expirence_work',
+        'skills',
+        'category_id'
     ];
 
     /**
@@ -63,5 +73,13 @@ class User extends Authenticatable
     public function jobs()
     {
         return $this->hasMany(Job::class, 'user_id', 'id');
+    }
+
+    /**
+     * Get the phone associated with the user.
+     */
+    public function category()
+    {
+        return $this->hasOne(Category::class, 'id', 'category_id');
     }
 }

@@ -4,9 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\JobController;
-use App\Http\Controllers\Job2Controller;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\IdeaController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\IdeaDetailController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,22 +22,38 @@ use App\Http\Controllers\WelcomeController;
 |
 */
 
-Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+//Route::get('/', [HomeController::class, 'index'])->name('welcome');
 
 Auth::routes();
+Route::get('/', function () {
+//        return redirect()->route('login');
+    return redirect()->route('ideas.index');
+});
+Route::middleware(['auth'])->group(function () {
 
-Route::get('/home2', [HomeController::class, 'index'])->name('home2');
-Route::get('/job-list/{categoryId?}', [HomeController::class, 'jobList'])->name('job-list');
-Route::get('/job-detail/{id}', [HomeController::class, 'jobDetail'])->name('job-detail');
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::resource('ideas', IdeaController::class);
+    Route::resource('comments', CommentController::class);
+    Route::get('/ideas/like/{id}', [IdeaDetailController::class, 'like'])->name('like');
+    Route::get('/ideas/dislike/{id}', [IdeaDetailController::class, 'dislike'])->name('dislike');
+    Route::get('/ideas/dislike/{id}', [IdeaDetailController::class, 'dislike'])->name('dislike');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::get('/ideaPopular', [IdeaController::class, 'indexPopular'])->name('ideas.popular');
+    Route::get('/ideaLastest', [IdeaController::class, 'indexLastest'])->name('ideas.lastest');
+    Route::get('/ideaLastestComment', [IdeaController::class, 'indexComments'])->name('ideas.comments');
+    Route::get('/export', [IdeaController::class, 'export'])->name('ideas.export');
+    Route::get('/download', [IdeaController::class, 'downloadZip'])->name('ideas.download');
+});
+
 /*------------------------------------------
 --------------------------------------------
 All Normal Users Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:user'])->group(function () {
-
-
+    Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
+    Route::get('/history', [HomeController::class, 'history'])->name('user.history');
+    Route::post('/profile/update', [HomeController::class, 'profileUpdate'])->name('profile.update');
+    Route::get('/apply/{jobId}', [HomeController::class, 'apply'])->name('apply');
 });
 
 /*------------------------------------------
@@ -46,11 +65,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
     Route::resource('users', UserController::class);
     Route::resource('category', CategoryController::class);
-    Route::resource('job', JobController::class)->except([
-        'create', 'store'
-    ]);
-    Route::get('/job/{id}/duyet', [JobController::class, 'duyet'])->name('job.duyet');
-    Route::get('/job/{id}/tuchoi', [JobController::class, 'tuChoi'])->name('job.tuChoi');
+
 });
 
 /*------------------------------------------
@@ -61,5 +76,5 @@ All Admin Routes List
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
 
     Route::get('/adminManager/home', [HomeController::class, 'adminManager'])->name('manager.home');
-    Route::resource('job2', Job2Controller::class);
+
 });

@@ -1,52 +1,108 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row mt-5">
-            @foreach($users as $user)
-                <div class="col-md-3">
-                    <!-- Widget: user widget style 2 -->
-                    <div class="card card-widget widget-user-2">
-                        <!-- Add the bg color to the header using any of the bg-* classes -->
-                        <div class="widget-user-header bg-warning">
-                            <div class="widget-user-image">
-{{--                                <img class="img-circle elevation-2" src="../dist/img/user7-128x128.jpg" alt="User Avatar">--}}
-                            </div>
-                            <!-- /.widget-user-image -->
-                            <h3 class="widget-user-username">{{ $user->name }}</h3>
-                            <h5 class="widget-user-desc">{{ $user->email }}</h5>
-                        </div>
-                        <div class="card-footer p-0">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Job <span class="float-right badge bg-primary"> {{ count($user->jobs) }}</span>
-                                    </a>
-                                </li>
-{{--                                <li class="nav-item">--}}
-{{--                                    <a href="#" class="nav-link">--}}
-{{--                                        Tasks <span class="float-right badge bg-info">5</span>--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
-{{--                                <li class="nav-item">--}}
-{{--                                    <a href="#" class="nav-link">--}}
-{{--                                        Completed Projects <span class="float-right badge bg-success">12</span>--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
-{{--                                <li class="nav-item">--}}
-{{--                                    <a href="#" class="nav-link">--}}
-{{--                                        Followers <span class="float-right badge bg-danger">842</span>--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- /.widget-user -->
-                </div>
-                <!-- /.col-md-6 -->
-            @endforeach
-
+    <h1>Create Account</h1>
+    <div class="account-list">
+        <div class="account-list-top">
+            <h2>List of Account</h2>
+            <!-- <div class="input-field">
+                <span class="material-icons-sharp">search</span>
+              <input type="text" placeholder="Search" />
+            </div> -->
         </div>
-        <!-- /.row -->
-    </div><!-- /.container-fluid -->
+
+        <table>
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Gender</th>
+                <th>Date of Birth</th>
+                <th>Role</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>nam123</td>
+                <td>1212</td>
+                <td>0918000000</td>
+                <td>Hanoi</td>
+                <td>Male</td>
+                <td>10/11/1999</td>
+                <td>Staff</td>
+                <td class="action"><a href=""><span class="material-icons-sharp">edit</span></a> <a href=""><span class="material-icons-sharp">delete</span></a></td>
+            </tr>
+
+            <tr>
+                <td>nam123</td>
+                <td>1212</td>
+                <td>0918000000</td>
+                <td>Hanoi</td>
+                <td>Male</td>
+                <td>10/11/1999</td>
+                <td>Staff</td>
+                <td class="action"><a href=""><span class="material-icons-sharp">edit</span></a> <a href=""><span class="material-icons-sharp">delete</span></a></td>
+            </tr>
+
+            <tr>
+                <td>nam123</td>
+                <td>1212</td>
+                <td>0918000000</td>
+                <td>Hanoi</td>
+                <td>Male</td>
+                <td>10/11/1999</td>
+                <td>Staff</td>
+                <td class="action"><a href=""><span class="material-icons-sharp">edit</span></a> <a href=""><span class="material-icons-sharp">delete</span></a></td>
+            </tr>
+
+
+            </tbody>
+        </table>
+        <a href="#">Show All</a>
+    </div>
+
+
+    <!-- ======================= LIST POST ==================================== -->
+    <h2>List of Idea</h2>
+    <div class="card-container">
+        <div class="header">
+            <a href="#">
+                <div class="profile-post">
+                    <div class="profile-photo">
+                        <img src="./img/Person.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <p>Nam Nguyen</p>
+                        <small class="text-muted">Staff</small>
+                    </div>
+                </div>
+                <div class="idea-description">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Sit et obcaecati suscipit provident itaque corporis,
+                        eaque minima assumenda libero reprehenderit ut ducimus aperiam
+                        illo fugit iste eius corrupti id velit? Lorem ipsum dolor sit,
+                        amet consectetur adipisicing elit. Est impedit cumque quaerat
+                        nesciunt, ipsum sunt facilis incidunt amet, commodi unde
+                        eveniet doloribus ad libero ex obcaecati vel eos, explicabo soluta?</p>
+                </div>
+                <div class="reaction">
+                    <div class="like">
+                        <span class="material-icons-sharp">thumb_up_off_alt</span>
+                        <small>100</small>
+                    </div>
+                    <div class="dislike">
+                        <span class="material-icons-sharp">thumb_down</span>
+                        <small>20</small>
+                    </div>
+                    <div class="comment">
+                        <span class="material-icons-sharp">textsms</span>
+                        <small>20</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 @endsection

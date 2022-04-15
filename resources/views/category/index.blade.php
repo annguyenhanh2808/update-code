@@ -29,7 +29,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">
-                                <a href="{{ route('category.create') }}" class="btn btn-primary">Thêm mới</a>
+                                <a href="{{ route('category.create') }}" class="btn btn-primary">Add new</a>
                             </h3>
 
                             <div class="card-tools">
@@ -56,7 +56,7 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Tên danh mục</th>
+                                    <th>Department Name</th>
 
                                     <th></th>
                                 </tr>

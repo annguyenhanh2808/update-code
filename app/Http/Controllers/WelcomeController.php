@@ -16,7 +16,7 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $job = Job::where('active', 1)->where('status', 1)->latest()->take(4)->get();
+        $job = Job::where('active', 1)->where('status', 1)->latest()->take(6)->get();
         return view('welcome')
             ->with('categoriesAll', Category::all())
             ->with('categories8', Category::latest()->take(8)->get())

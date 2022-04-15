@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -19,8 +20,15 @@ class UserController extends Controller
     {
         $users = User::latest()->paginate(5);
         Log::info('dsadsad testt');
-        return view('users.index', compact('users'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $result = view('users.index', compact('users'))
+            ->with('i', (request()->input('page', 1) - 1) * 5)
+            ->with('departments', Category::all());
+        if(request()->input('id')) {
+            $result-> with('user', User::find(request()->input('id')));
+//            dd(User::find(request()->input('id')));
+        }
+
+        return $result;
     }
 
     /**
@@ -43,6 +51,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+//        dd($request->all());
         $request->validate([
             'name' => 'required',
             'email' => 'required',
@@ -53,6 +62,7 @@ class UserController extends Controller
         $request->merge([
             'password' => Hash::make($request->input('password')),
         ]);
+//        dd($request->all());
         User::create($request->all());
 
         return redirect()->route('users.index')
@@ -82,7 +92,13 @@ class UserController extends Controller
     {
         //
         $item = User::find($id);
-        return view('users.edit', compact('item'));
+        $users = User::latest()->paginate(10);
+
+        return view('users.index')
+            ->with('i', (request()->input('page', 1) - 1) * 10)
+            ->with('item', $item)
+            ->with('users', $users);
+//        return view('users.edit', compact('item'));
     }
 
     /**
@@ -117,11 +133,13 @@ class UserController extends Controller
     {
         //
         $user = User::find($id);
-        $user->update([
-            'active' => $user->active == 0 ? 1 : 0
-        ]);
+//        dd($user);
+        $user->delete();
+//        $user->update([
+//            'active' => $user->active == 0 ? 1 : 0
+//        ]);
 
         return redirect()->route('users.index')
-            ->with('success', $user->active == 0 ? 'Mở khóa tài khoản thành công' : 'Khóa tài khoản thành công');
+            ->with('success', 'Delete user success');
     }
 }

@@ -16,8 +16,16 @@ class Category extends Model
     /**
      * Get the phone associated with the user.
      */
-    public function jobs()
+    public function users()
     {
-        return $this->hasMany(Job::class, 'category_id', 'id');
+        return $this->hasMany(User::class, 'category_id', 'id');
+    }
+
+    /**
+     * Get the phone associated with the user.
+     */
+    public function ideas()
+    {
+        return $this->hasMany(Idea::class, 'category_id', 'id');
     }
 }
