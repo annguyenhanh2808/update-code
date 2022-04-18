@@ -37,6 +37,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css')}}">
     {{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -55,136 +56,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
-{{--            <!-- Navbar Search -->--}}
-{{--            <li class="nav-item">--}}
-{{--                <a class="nav-link" data-widget="navbar-search" href="#" role="button">--}}
-{{--                    <i class="fas fa-search"></i>--}}
-{{--                </a>--}}
-{{--                <div class="navbar-search-block">--}}
-{{--                    <form class="form-inline">--}}
-{{--                        <div class="input-group input-group-sm">--}}
-{{--                            <input class="form-control form-control-navbar" type="search" placeholder="Search"--}}
-{{--                                   aria-label="Search">--}}
-{{--                            <div class="input-group-append">--}}
-{{--                                <button class="btn btn-navbar" type="submit">--}}
-{{--                                    <i class="fas fa-search"></i>--}}
-{{--                                </button>--}}
-{{--                                <button class="btn btn-navbar" type="button" data-widget="navbar-search">--}}
-{{--                                    <i class="fas fa-times"></i>--}}
-{{--                                </button>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
-{{--            </li>--}}
-
-            <!-- Messages Dropdown Menu -->
-{{--            <li class="nav-item dropdown">--}}
-{{--                <a class="nav-link" data-toggle="dropdown" href="#">--}}
-{{--                    <i class="far fa-comments"></i>--}}
-{{--                    <span class="badge badge-danger navbar-badge">3</span>--}}
-{{--                </a>--}}
-{{--                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">--}}
-{{--                    <a href="#" class="dropdown-item">--}}
-{{--                        <!-- Message Start -->--}}
-{{--                        <div class="media">--}}
-{{--                            <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">--}}
-{{--                            <div class="media-body">--}}
-{{--                                <h3 class="dropdown-item-title">--}}
-{{--                                    Brad Diesel--}}
-{{--                                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>--}}
-{{--                                </h3>--}}
-{{--                                <p class="text-sm">Call me whenever you can...</p>--}}
-{{--                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <!-- Message End -->--}}
-{{--                    </a>--}}
-{{--                    <div class="dropdown-divider"></div>--}}
-{{--                    <a href="#" class="dropdown-item">--}}
-{{--                        <!-- Message Start -->--}}
-{{--                        <div class="media">--}}
-{{--                            <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">--}}
-{{--                            <div class="media-body">--}}
-{{--                                <h3 class="dropdown-item-title">--}}
-{{--                                    John Pierce--}}
-{{--                                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>--}}
-{{--                                </h3>--}}
-{{--                                <p class="text-sm">I got your message bro</p>--}}
-{{--                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <!-- Message End -->--}}
-{{--                    </a>--}}
-{{--                    <div class="dropdown-divider"></div>--}}
-{{--                    <a href="#" class="dropdown-item">--}}
-{{--                        <!-- Message Start -->--}}
-{{--                        <div class="media">--}}
-{{--                            <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">--}}
-{{--                            <div class="media-body">--}}
-{{--                                <h3 class="dropdown-item-title">--}}
-{{--                                    Nora Silvester--}}
-{{--                                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>--}}
-{{--                                </h3>--}}
-{{--                                <p class="text-sm">The subject goes here</p>--}}
-{{--                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <!-- Message End -->--}}
-{{--                    </a>--}}
-{{--                    <div class="dropdown-divider"></div>--}}
-{{--                    <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>--}}
-{{--                </div>--}}
-{{--            </li>--}}
-
-            <!-- Notifications Dropdown Menu -->
-{{--            <li class="nav-item dropdown">--}}
-{{--                <a class="nav-link" data-toggle="dropdown" href="#">--}}
-{{--                    <i class="far fa-bell"></i>--}}
-{{--                    <span class="badge badge-warning navbar-badge">15</span>--}}
-{{--                </a>--}}
-{{--                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">--}}
-{{--                    <span class="dropdown-header">15 Notifications</span>--}}
-{{--                    <div class="dropdown-divider"></div>--}}
-{{--                    <a href="#" class="dropdown-item">--}}
-{{--                        <i class="fas fa-envelope mr-2"></i> 4 new messages--}}
-{{--                        <span class="float-right text-muted text-sm">3 mins</span>--}}
-{{--                    </a>--}}
-{{--                    <div class="dropdown-divider"></div>--}}
-{{--                    <a href="#" class="dropdown-item">--}}
-{{--                        <i class="fas fa-users mr-2"></i> 8 friend requests--}}
-{{--                        <span class="float-right text-muted text-sm">12 hours</span>--}}
-{{--                    </a>--}}
-{{--                    <div class="dropdown-divider"></div>--}}
-{{--                    <a href="#" class="dropdown-item">--}}
-{{--                        <i class="fas fa-file mr-2"></i> 3 new reports--}}
-{{--                        <span class="float-right text-muted text-sm">2 days</span>--}}
-{{--                    </a>--}}
-{{--                    <div class="dropdown-divider"></div>--}}
-{{--                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>--}}
-{{--                </div>--}}
-{{--            </li>--}}
-{{--            <li class="nav-item">--}}
-{{--                <a class="nav-link" data-widget="fullscreen" href="#" role="button">--}}
-{{--                    <i class="fas fa-expand-arrows-alt"></i>--}}
-{{--                </a>--}}
-{{--            </li>--}}
-{{--            <li class="nav-item">--}}
-{{--                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">--}}
-{{--                    <i class="fas fa-th-large"></i>--}}
-{{--                </a>--}}
-{{--            </li>--}}
+            
         </ul>
     </nav>
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #3F69F2 !important">
         <!-- Brand Logo -->
         <a href="index3.html" class="brand-link">
-            <img src="{{ asset('/img/logo.svg') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            <img src="{{ asset('/img/logo.svg') }}" alt="Logo" class="brand-image img-circle elevation-3"
                  style="opacity: .8">
-            <span class="brand-text font-weight-light">IDea
+            <span class="brand-text font-weight-light" style="color: white !important">IDea
             ({{ \Illuminate\Support\Facades\Auth::user()->type == 1 ? 'Admin'  : (\Illuminate\Support\Facades\Auth::user()->type == 2  ? 'QA Manager' : (\Illuminate\Support\Facades\Auth::user()->type == 3  ? 'QA Coordinator' : 'Staff') ) }})</span>
         </a>
 
@@ -198,28 +81,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <div class="info">
                     <a href="#"
-                       class="d-block">{{\Illuminate\Support\Facades\Auth::user()->name}}
-                        <p>
+                       class="d-block" style="color: white !important">{{\Illuminate\Support\Facades\Auth::user()->name}}
+                        <p >
                             ({{\App\Models\Category::find(\Illuminate\Support\Facades\Auth::user()->category_id)->category_name}})
                         </p>
                         </a>
                 </div>
             </div>
 
-            <!-- SidebarSearch Form -->
-{{--            <div class="form-inline">--}}
-{{--                <div class="input-group" data-widget="sidebar-search">--}}
-{{--                    <input class="form-control form-control-sidebar" type="search" placeholder="Search"--}}
-{{--                           aria-label="Search">--}}
-{{--                    <div class="input-group-append">--}}
-{{--                        <button class="btn btn-sidebar">--}}
-{{--                            <i class="fas fa-search fa-fw"></i>--}}
-{{--                        </button>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
 
-            <!-- Sidebar Menu -->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false">
@@ -240,16 +110,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     @if(\Illuminate\Support\Facades\Auth::user()->type == 1)
                         <li class="nav-item">
                             <a href="{{route('users.index')}}" class="nav-link">
-                                <i class="nav-icon fas fa-user-plus"></i>
-                                <p>
+                                <i class="nav-icon fas fa-user-plus" style="color: white !important"></i>
+                                <p style="color: white !important">
                                     Account
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('category.index')}}" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
+                                <i class="nav-icon fas fa-th" style="color: white !important"></i>
+                                <p style="color: white !important">
                                     Departments
                                 </p>
                             </a>
@@ -261,40 +131,40 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     @endif
                     <li class="nav-item">
                         <a href="{{route('ideas.index')}}" class="nav-link">
-                            <i class="nav-icon fas fa-lightbulb"></i>
-                            <p>
+                            <i class="nav-icon fas fa-lightbulb" style="color: white !important"></i>
+                            <p style="color: white !important">
                                 Ideas
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{route('ideas.popular')}}" class="nav-link">
-                            <i class="nav-icon fas fa-lightbulb"></i>
-                            <p>
+                            <i class="nav-icon fas fa-lightbulb" style="color: white !important"></i>
+                            <p style="color: white !important">
                                 Most Popular Ideas
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{route('ideas.lastest')}}" class="nav-link">
-                            <i class="nav-icon fas fa-lightbulb"></i>
-                            <p>
+                            <i class="nav-icon fas fa-lightbulb" style="color: white !important"></i>
+                            <p style="color: white !important">
                                 Most Viewed Ideas
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{route('ideas.lastest')}}" class="nav-link">
-                            <i class="nav-icon fas fa-lightbulb"></i>
-                            <p>
+                            <i class="nav-icon fas fa-lightbulb" style="color: white !important"></i>
+                            <p style="color: white !important">
                                 Latest Ideas
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{route('ideas.comments')}}" class="nav-link">
-                            <i class="nav-icon fas fa-lightbulb"></i>
-                            <p>
+                            <i class="nav-icon fas fa-lightbulb" style="color: white !important"></i>
+                            <p style="color: white !important">
                                 Latest Comments
                             </p>
                         </a>
@@ -302,8 +172,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li class="nav-item">
                         <a href="{{ route('logout') }}" class="nav-link"
                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                            <i class="nav-icon fa fa-sign-out-alt"></i>
-                            <p>
+                            <i class="nav-icon fa fa-sign-out-alt" style="color: white !important" ></i>
+                            <p style="color: white !important">
                                 {{ __('Log out') }}
                             </p>
                         </a>
@@ -383,85 +253,3 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </body>
 </html>
 
-
-{{--<!doctype html>--}}
-{{--<html >--}}
-{{--<head>--}}
-{{--    <meta charset="utf-8">--}}
-{{--    <meta name="viewport" content="width=device-width, initial-scale=1">--}}
-
-{{--    <!-- CSRF Token -->--}}
-{{--    <meta name="csrf-token" content="{{ csrf_token() }}">--}}
-
-{{--    <title>{{ config('app.name', 'Laravel') }}</title>--}}
-
-{{--    <!-- Scripts -->--}}
-{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
-
-{{--    <!-- Fonts -->--}}
-{{--    <link rel="dns-prefetch" href="//fonts.gstatic.com">--}}
-{{--    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">--}}
-
-{{--    <!-- Styles -->--}}
-{{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
-{{--</head>--}}
-{{--<body>--}}
-{{--    <div id="app">--}}
-{{--        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">--}}
-{{--            <div class="container">--}}
-{{--                <a class="navbar-brand" href="{{ url('/') }}">--}}
-{{--                    {{ config('app.name', 'Laravel') }}--}}
-{{--                </a>--}}
-{{--                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">--}}
-{{--                    <span class="navbar-toggler-icon"></span>--}}
-{{--                </button>--}}
-
-{{--                <div class="collapse navbar-collapse" id="navbarSupportedContent">--}}
-{{--                    <!-- Left Side Of Navbar -->--}}
-{{--                    <ul class="navbar-nav me-auto">--}}
-
-{{--                    </ul>--}}
-
-{{--                    <!-- Right Side Of Navbar -->--}}
-{{--                    <ul class="navbar-nav ms-auto">--}}
-{{--                        <!-- Authentication Links -->--}}
-{{--                        @guest--}}
-{{--                            @if (Route::has('login'))--}}
-{{--                                <li class="nav-item">--}}
-{{--                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>--}}
-{{--                                </li>--}}
-{{--                            @endif--}}
-
-{{--                            @if (Route::has('register'))--}}
-{{--                                <li class="nav-item">--}}
-{{--                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
-{{--                                </li>--}}
-{{--                            @endif--}}
-{{--                        @else--}}
-{{--                            <li class="nav-item dropdown">--}}
-{{--                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}
-{{--                                    {{ Auth::user()->name }}--}}
-{{--                                </a>--}}
-
-{{--                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">--}}
-{{--                                    <a class="dropdown-item" href="{{ route('logout') }}"--}}
-{{--                                       onclick="event.preventDefault();--}}
-{{--                                                     document.getElementById('logout-form').submit();">--}}
-{{--                                        {{ __('Logout') }}--}}
-{{--                                    </a>--}}
-
-
-{{--                                </div>--}}
-{{--                            </li>--}}
-{{--                        @endguest--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </nav>--}}
-
-{{--        <main class="py-4">--}}
-{{--            @yield('content')--}}
-{{--        </main>--}}
-{{--    </div>--}}
-{{--</body>--}}
-{{--</html>--}}

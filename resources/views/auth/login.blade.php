@@ -39,7 +39,7 @@
                     <div class="card-footer">
                         <div class="row">
                             <div class="col-12 alert alert-danger">
-                                <p>{{$message}}</p>
+                                <p>Wrong email or password</p>
                             </div>
 
                         </div>

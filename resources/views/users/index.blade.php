@@ -5,14 +5,8 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0">Starter Page</h1>
-                </div><!-- /.col -->
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Starter Page</li>
-                    </ol>
+                <div class="col-sm-5">
+                    <h1 class="m-0">Account</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -25,27 +19,8 @@
         <div class="container-fluid">
             <!-- /.row -->
             <div class="row">
-                <div class="col-7">
+                <div class="col-8">
                     <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-{{--                                <a href="{{ route('category.create') }}" class="btn btn-primary">Thêm mới</a>--}}
-                            </h3>
-
-                            <div class="card-tools">
-                                <div class="input-group input-group-sm" style="width: 150px;">
-                                    <input type="text" name="table_search" class="form-control float-right"
-                                           placeholder="Search">
-
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-default">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
                             @if ($message = Session::get('success'))
                                 <div class="alert alert-success">
@@ -69,7 +44,6 @@
                                 @foreach ($users as $item)
                                     <tr>
                                         <td>{{ $item->email }}</td>
-                                        {{--                <td>1212</td>--}}
                                         <td>{{ $item->phone_number }}</td>
                                         <td>{{ $item->category->category_name }}</td>
                                         <td>{{ $item->gender }}</td>
@@ -79,12 +53,12 @@
                                         <td class="action form-inline">
                                             <a href="{{ route('users.index',['id' => $item->id]) }}"><i
                                                     class="fas fa-edit  fa-lg"></i></a>
-                                            <form action="{{ route('users.destroy',$item->id) }}" method="POST">
+                                            <form action="{{ route('users.destroy',$item->id) }}" method="POST" style="margin-left: 10px !important">
 
                                                 @csrf
                                                 @method('DELETE')
 
-                                                <button type="submit"><i class="fas fa-trash fa-lg text-danger"></i></button>
+                                                <button type="submit"><i class="fas fa-trash fa-lg text-danger""></i></button>
                                             </form>
                                         </td>
                                     </tr>
@@ -100,7 +74,8 @@
                     </div>
                     <!-- /.card -->
                 </div>
-                <div class="col-5">
+
+                <div class="col-4">
                     <div class="card">
                         <div class="card-body">
                             <form action="{{ isset($user) ? route('users.update',$user->id) : route('users.store') }}"
@@ -176,18 +151,7 @@
                                     <input type="text" name="address" value="{{$user->address ?? '' }}"
                                            class="form-control" placeholder="Address"/>
                                 </div>
-                                {{--                                <div class="form-group">--}}
-                                {{--                                    <span class="material-icons-sharp">transgender</span>--}}
-                                {{--                                    <input type="text" name="gender" placeholder="Gender"/>--}}
-                                {{--                                </div>--}}
-                                {{--                                <div class="input-field">--}}
-                                {{--                                    <span class="material-icons-sharp">date_range</span>--}}
-                                {{--                                    <input class="date" type="text" name="date_of_birth" placeholder="Date of Birth" st/>--}}
-                                {{--                                </div>--}}
-                                {{--            <div class="input-field">--}}
-                                {{--                <span class="material-icons-sharp">supervisor_account</span>--}}
-                                {{--                <input type="text" placeholder="Role"/>--}}
-                                {{--            </div>--}}
+
                                 <input type="submit" class="btn btn-primary" value="{{ isset($user) ? 'Update' : 'Add'}}"/>
                             </form>
                         </div>

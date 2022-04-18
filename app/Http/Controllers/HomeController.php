@@ -154,13 +154,7 @@ class HomeController extends Controller
             'status' => 0
         ]);
         $job = Job::find($jobId);
-//        Mail::to($job->user->email)->send(new NotifyMail());
-//
-//        if (Mail::failures()) {
-//            return redirect()->route('welcome');
-//        }else{
-//            return redirect()->route('welcome');
-//        }
+
         return redirect()->route('welcome');
     }
 
